@@ -31,7 +31,3 @@ class Solution(object):
             n.next = ListNode(c)
         
         return node.next
-
-
-        
-        
