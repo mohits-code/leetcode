@@ -5,8 +5,9 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        l = len(nums)
-        for i in range(l):
-            for j in range(i+1, l):
-                if nums[i]+nums[j]==target:
-                    return [i, j]
+        d ={}
+        for i, n in enumerate(nums):
+            c = target - n
+            if c in d:
+                return[d[c],i]
+            d[n]=i
