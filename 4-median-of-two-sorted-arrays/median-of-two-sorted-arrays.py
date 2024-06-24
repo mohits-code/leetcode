@@ -10,17 +10,6 @@ class Solution(object):
         nums1.sort()
         return median(nums1)
 
-
-
-
-
-
-'''if len(nums1) is 0:
-            return median(nums2)
-        if len(nums2) is 0:
-            return median(nums1) 
-        return median([median(nums1),median(nums2)])
-'''
 def median (nums):
     l = len(nums)
     if l is 0:
