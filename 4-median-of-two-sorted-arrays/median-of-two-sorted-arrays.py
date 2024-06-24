@@ -9,7 +9,7 @@ class Solution(object):
         nums1=nums1+nums2
         nums1.sort()
         return median(nums1)
-
+        
 def median (nums):
     l = len(nums)
     if l is 0:
