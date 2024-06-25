@@ -5,6 +5,5 @@ class Solution(object):
             i = nums.index(val)
             while i<len(nums) and nums[i]==val:
                 nums.pop(i)
-        
+
         return len(nums)
-        
