@@ -1,7 +1,5 @@
 class Solution(object):
     def removeElement(self, nums, val):
-        
-
         if val in nums:
             nums.sort()
             i = nums.index(val)
