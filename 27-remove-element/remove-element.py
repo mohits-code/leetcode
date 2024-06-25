@@ -5,10 +5,8 @@ class Solution(object):
         if val in nums:
             nums.sort()
             i = nums.index(val)
-            while nums[i]==val:
+            while i<len(nums) and nums[i]==val:
                 nums.pop(i)
-                if i==len(nums):
-                    break
         
         return len(nums)
         
