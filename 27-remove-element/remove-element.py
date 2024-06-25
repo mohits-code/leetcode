@@ -12,14 +12,3 @@ class Solution(object):
         
         return len(nums)
         
-        
-        '''
-        total = len(nums)
-        for n in nums:
-            print(n)
-            if n == val:
-                total=total-1
-                nums.remove(n)
-
-
-        return total'''
