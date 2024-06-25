@@ -1,9 +1,9 @@
 class Solution(object):
     def removeElement(self, nums, val):
-        if val in nums:
-            nums.sort()
-            i = nums.index(val)
-            while i<len(nums) and nums[i]==val:
+        i=0
+        while i<len(nums):
+            if nums[i]==val:
                 nums.pop(i)
-
+            else:
+                i+=1
         return len(nums)
