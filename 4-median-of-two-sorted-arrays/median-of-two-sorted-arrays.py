@@ -4,10 +4,10 @@ class Solution(object):
         nums1.sort()
         return median(nums1)
         
-def median (nums):
-    l = len(nums)
+def median (n):
+    l = len(n)
     if l%2==1:
-        return nums[l//2]
+        return n[l//2]
     if l is 0:
         return 0
-    return (nums[l//2]+nums[l//2-1])/2.0
+    return (n[l//2]+n[l//2-1])/2.0
