@@ -8,9 +8,10 @@ class Solution(object):
         total = 0
         l=len(s)
         for i, char in enumerate(s):
-            if i+1<l and d[char]< d[s[i+1]]:
-                total-=d[char]
+            c=d[char]
+            if i+1<l and c< d[s[i+1]]:
+                total-=c
             else: 
-                total+=d[char]
+                total+=c
 
         return total
