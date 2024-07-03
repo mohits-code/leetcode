@@ -8,11 +8,11 @@ class Solution(object):
         l=0
         r=len(height)-1
         while(l<r):
-            x=(r-l)*min(height[l],height[r])
-            if x>m:
-                m=x
-            if height[l] > height[r]:
+            if height[l] >= height[r]:
+                temp = (r-l)*height[r]
                 r-=1
             else:
+                temp = (r-l)*height[l]
                 l+=1
+            m=max(m, temp)
         return m
