@@ -7,7 +7,6 @@ class Solution(object):
         m = 0
         l=0
         r=len(height)-1
-
         while(l<r):
             x=(r-l)*min(height[l],height[r])
             if x>m:
@@ -16,6 +15,4 @@ class Solution(object):
                 r-=1
             else:
                 l+=1
-
-        
         return m
