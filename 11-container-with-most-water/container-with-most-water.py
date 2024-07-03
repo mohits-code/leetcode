@@ -9,8 +9,7 @@ class Solution(object):
         r=len(height)-1
         while(l<r):
             x=(r-l)*min(height[l],height[r])
-            if x>m:
-                m=x
+            m=max(m,x)
             if height[l] > height[r]:
                 r-=1
             else:
