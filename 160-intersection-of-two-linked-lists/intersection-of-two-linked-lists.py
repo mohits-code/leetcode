@@ -10,6 +10,8 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
+        if (headA == None or headB == None):
+            return None
         la = getL(headA)
         lb = getL(headB)
         
