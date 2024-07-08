@@ -27,8 +27,9 @@ class Solution(object):
             headB=headB.next
         return None
 
-def getL(x):
-    if x==None:
-        return 0
-    return getL(x.next) + 1
-        
+def getL(head):
+    length = 0
+    while head:
+        length += 1
+        head = head.next
+    return length
