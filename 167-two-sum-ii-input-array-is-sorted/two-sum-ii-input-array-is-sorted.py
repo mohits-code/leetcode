@@ -8,12 +8,11 @@ class Solution(object):
         left=0
         right=len(numbers)-1
         while left<right:
-            l=numbers[left]
-            r=numbers[right]
-            if l+r==target:
+            total=numbers[left]+numbers[right]
+            if total==target:
                 return [left+1, right+1]
-            elif l+r>target:
+            elif total>target:
                 right-=1
-            elif l+r<target:
+            else:
                 left+=1
         
