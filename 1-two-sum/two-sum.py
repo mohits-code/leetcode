@@ -7,11 +7,11 @@ class Solution(object):
         """
 
         comps=dict()
+        l=len(nums)
+        for i in range(l):
+            curr = nums[i]
+            if curr in comps:
+                return [comps[curr], i]
+            comps[target-curr]=i
 
-        for i in range(len(nums)):
-            val=nums[i]
-            if val in comps:
-                return [comps[val],i]
-            comps[target-val]=i
-        
         
