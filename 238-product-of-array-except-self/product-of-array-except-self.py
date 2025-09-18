@@ -4,15 +4,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+
         l=len(nums)
-        d = l*[1]
-        left=1
+        pre=1
+        suf=1
+        res=[1]*l
         for i in range(l):
-            d[i]*=left
-            left*=nums[i]
-        right=1
-        for j in reversed(range(l)):
-            d[j]*=right
-            right*=nums[j]
-        return d
+            res[i]*= pre
+            pre*=nums[i]
+
+        for j in range(l-1, -1, -1):
+            res[j]*=suf
+            suf*=nums[j]
+
+        return res
         
