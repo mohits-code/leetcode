@@ -4,11 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        nums.sort()
+        
+        uniqueNums=set()
 
-        for i in range(len(nums)-1):
-            if nums[i]==nums[i+1]:
+        for num in nums:
+            if num in uniqueNums:
                 return True
+            
+            uniqueNums.add(num)
         
         return False
         
