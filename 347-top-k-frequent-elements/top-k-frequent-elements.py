@@ -1,12 +1,8 @@
-class Solution(object):
-    def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
-        freq=defaultdict(int)
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        d= defaultdict(int)
+
         for num in nums:
-            freq[num]+=1
-        return sorted(freq.keys(), key=lambda x:freq[x], reverse=True)[:k]
+            d[num]+=1
         
+        return sorted(d, key=lambda x : d[x], reverse=True)[:k]
