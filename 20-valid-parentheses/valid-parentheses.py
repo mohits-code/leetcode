@@ -4,14 +4,15 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        b = {')':'(', '}':'{', ']':'['}
-        ob=[]
+        parenthesis={"(":")", "[":"]", "{":"}"}
+        stack = []
         for char in s:
-            if char in b.values():
-                ob.append(char)
-            elif ob and b[char] == ob[-1]:
-                ob.pop()
-            else: return False
-        return ob == []
-
-        
+            if char in parenthesis.keys():
+                stack.append(char)
+            elif not stack:
+                return False
+            elif parenthesis[stack.pop()] != char:
+                    return False
+        if len(stack)!=0:
+            return False
+        return True
