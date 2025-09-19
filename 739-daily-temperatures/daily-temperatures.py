@@ -8,7 +8,8 @@ class Solution:
 
         for i in range(l):
             while stack and temperatures[i]>temperatures[stack[-1]]:
-                answer[stack[-1]]=i-stack[-1]
+                top=stack[-1]
+                answer[top]=i-top
                 stack.pop()
             stack.append(i)
         
