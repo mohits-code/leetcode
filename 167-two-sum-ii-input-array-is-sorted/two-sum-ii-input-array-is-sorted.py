@@ -5,14 +5,17 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        
+        l=len(numbers)
+
         left=0
-        right=len(numbers)-1
+        right=l-1
+
         while left<right:
-            total=numbers[left]+numbers[right]
-            if total==target:
+            currTarget = numbers[left] + numbers[right]
+            if currTarget == target:
                 return [left+1, right+1]
-            elif total>target:
+            elif currTarget > target:
                 right-=1
             else:
                 left+=1
-        
