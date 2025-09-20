@@ -1,53 +1,29 @@
 # Definition for singly-linked list.
-# class ListNode(object):
+# class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution(object):
-    def mergeTwoLists(self, list1, list2):
-        """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
-        ret = ListNode()
-        r=ret
-        while list1 and list2:
-            if list1.val<=list2.val:
-                r=ListNode(list1.val)
-                list1=list1.next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+        head1=list1
+        head2=list2
+        newHead=ListNode()
+        curr=newHead
+        while head1!=None and head2!=None:
+            if head1.val>=head2.val:
+                curr.next=ListNode(head2.val,None)
+                head2=head2.next
             else:
-                r=ListNode(list2.val)
-                list2=list2.next
-            r=r.next
+                curr.next=ListNode(head1.val,None)
+                head1=head1.next
+            curr=curr.next
+        if head1!=None:
+            curr.next=head1
+        elif head2!=None:
+            curr.next=head2
+        return newHead.next
+
+            
+            
         
-        # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution(object):
-    def mergeTwoLists(self, list1, list2):
-        """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
-        ret = ListNode()
-        r = ret
-        
-        while list1 and list2:
-            if list1.val <= list2.val:
-                r.next = list1
-                list1 = list1.next
-            else:
-                r.next = list2
-                list2 = list2.next
-            r = r.next
-        
-        if list1:
-            r.next = list1
-        else:
-            r.next = list2
-        
-        return ret.next 
