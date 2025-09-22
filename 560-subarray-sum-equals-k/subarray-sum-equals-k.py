@@ -6,9 +6,6 @@ class Solution(object):
         :rtype: int
         """
 
-        if len(nums)==1:
-            if nums[0]!=k:
-                return 0
 
 
         prefixes=defaultdict(int)
