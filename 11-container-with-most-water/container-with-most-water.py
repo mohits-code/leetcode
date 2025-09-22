@@ -4,18 +4,30 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        m = 0
-        l=0
-        r=len(height)-1
-        h=max(height)
-        while(l<r):
-            if height[l] >= height[r]:
-                temp = (r-l)*height[r]
-                r-=1
+
+        if len(height)<=1:
+            return 0
+
+        l=len(height)
+        mostWater=0
+
+        left=0
+        right=l-1
+
+        while left<right:
+            leftVal=height[left]
+            rightVal=height[right]
+
+            currWater=min(leftVal, rightVal)*(right-left)
+
+            if currWater > mostWater:
+                mostWater = currWater
+
+            if rightVal>leftVal:
+                left+=1
             else:
-                temp = (r-l)*height[l]
-                l+=1
-            m=max(m, temp)
-            if m>=h*(r-l):
-                break
-        return m
+                right-=1        
+
+        return mostWater
+
+        
