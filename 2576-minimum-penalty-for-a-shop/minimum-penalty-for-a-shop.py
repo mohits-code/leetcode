@@ -1,20 +1,15 @@
 class Solution:
     def bestClosingTime(self, customers: str) -> int:
+        idx=0
         total=0
-
-        for c in customers:
-            if c=="Y":
-                total+=1
-            
-        idx=-1
-        count=total
+        curr=0
         for i in range(len(customers)):
             if customers[i]=="Y":
-                count-=1
-                if count<total:
-                    total=count
-                    idx=i
+                curr-=1
+                if curr<total:
+                    total=curr
+                    idx=i+1
             else:
-                count+=1
+                curr+=1
 
-        return idx+1
+        return idx
