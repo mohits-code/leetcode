@@ -1,9 +1,7 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         d=defaultdict(int)
-        left=0
-        total=0
-        curr=0
+        left=total=curr=0
         for right in range(len(s)):
             d[s[right]]+=1
             curr=max(curr,d[s[right]])
