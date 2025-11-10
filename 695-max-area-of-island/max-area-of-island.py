@@ -18,11 +18,10 @@ class Solution:
                 for a,b in dirs:
                     nx=x+a
                     ny=y+b
-                    if inBounds(nx,ny):
-                        if grid[nx][ny] ==1:
-                            q.append((nx, ny))
-                            grid[nx][ny]=0
-                            area+=1
+                    if inBounds(nx,ny) and grid[nx][ny] ==1:
+                        q.append((nx, ny))
+                        grid[nx][ny]=0
+                        area+=1
             return area
 
 
