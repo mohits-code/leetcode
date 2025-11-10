@@ -11,17 +11,18 @@ class Solution:
         def bfs(i,j):
             q=deque()
             q.append((i,j))
-            area=0
+            grid[i][j]=0
+            area=1
             while q:
                 x,y=q.pop()
-                if grid[x][y]==0:
-                    continue
-                grid[x][y]=0
-                area+=1
                 for a,b in dirs:
-                    if inBounds(x+a,y+b):
-                        if grid[x+a][y+b] ==1:
-                            q.append((x+a, y+b))
+                    nx=x+a
+                    ny=y+b
+                    if inBounds(nx,ny):
+                        if grid[nx][ny] ==1:
+                            q.append((nx, ny))
+                            grid[nx][ny]=0
+                            area+=1
             return area
 
 
