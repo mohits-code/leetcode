@@ -8,6 +8,6 @@ class Solution:
                 if n in d:
                     return d[n]
                 d[n-1]=recur(n-1)
-                return recur(n-1)+recur(n-2)
+                return d[n-1]+recur(n-2)
 
         return recur(n)
