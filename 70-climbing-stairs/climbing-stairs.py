@@ -7,7 +7,7 @@ class Solution:
             else:
                 if n in d:
                     return d[n]
-                d[n-1]=recur(n-1)
-                return d[n-1]+recur(n-2)
+                d[n]=recur(n-1)+recur(n-2)
+                return d[n]
 
         return recur(n)
