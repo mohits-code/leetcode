@@ -8,13 +8,12 @@ class TimeMap:
 
 
     def get(self, key: str, timestamp: int) -> str:
-        arr=self.kvs[key]
         prev=-1
         l=0
-        r=len(arr)-1
+        r=len(self.kvs[key])-1
         while l<=r:
             mid=(l+r)//2
-            if arr[mid][0]<=timestamp:
+            if self.kvs[key][mid][0]<=timestamp:
                 prev=mid
                 l=mid+1
             else:
